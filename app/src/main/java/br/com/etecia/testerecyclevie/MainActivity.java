@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -28,16 +29,24 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+    /*public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceStace) {
+        View view = inflater.inflate(R.layout.activity_main, container, false);*/
+
+        idRecPager = findViewById(R.id.idRecPager);
+
+
+        AdaptadorPager adaptadorPager = new AdaptadorPager(getApplicationContext(), lsModelos);
+
+        idRecPager.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+
+        idRecPager.hasFixedSize();
+
+        idRecPager.setAdapter(adaptadorPager);
+
+
     }
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                              Bundle savedInstanceStace){
-        View view = inflater.inflate(R.layout.activity_main, container, false);
-
-        idRecPager = view.findViewById(R.id.idRecPager);
-
-
-
-
-        }
 
 }

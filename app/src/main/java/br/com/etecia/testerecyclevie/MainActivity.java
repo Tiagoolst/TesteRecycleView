@@ -1,14 +1,22 @@
 package br.com.etecia.testerecyclevie;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private List<ObjetoModelo> lsModelos;
+    RecyclerView idRecPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,4 +29,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceStace){
+        View view = inflater.inflate(R.layout.activity_main, container, false);
+
+        idRecPager = view.findViewById(R.id.idRecPager);
+
+
+
+
+        }
+
 }

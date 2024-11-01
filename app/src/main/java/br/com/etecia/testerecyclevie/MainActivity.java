@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         View view = inflater.inflate(R.layout.activity_main, container, false);*/
 
         idRecPager = findViewById(R.id.idRecPager);
+
+        lsModelos = new ArrayList<>();
+        lsModelos.add(new ObjetoModelo("Imagem"))
 
 
         AdaptadorPager adaptadorPager = new AdaptadorPager(getApplicationContext(), lsModelos);
